@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .audio-control {
+      background-color: light-grey;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    #playPauseIcon {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="audio-control" onclick="toggleAudio()">
+  <img id="playPauseIcon" src="./assets/images/play-icon.png" alt="Play Icon">
+</div>
+
+<audio id="myAudio" controls style="display: none;">
+  <source src="/storage/emulated/0/download/music1/aggressive.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  let audio = document.getElementById("myAudio");
+  let playPauseIcon = document.getElementById("playPauseIcon");
+
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play();
+      playPauseIcon.src = "./assets/images/pause-icon.png";
+    } else {
+      audio.pause();
+      playPauseIcon.src = "./assets/images/play-icon.png";
+    }
+  }
+</script>
+
+</body>
+</html>
+
+    <!--
+      - #End Audio
